@@ -1,0 +1,47 @@
+@utility breakout-grid {
+  --gutter-min: --spacing(4);
+  --gutter-max: --spacing(12);
+  --gutter: clamp(var(--gutter-min), 6vw, var(--gutter-max));
+  --full: minmax(var(--gutter), 1fr);
+  --feature: minmax(0, --spacing(20));
+  --popout: minmax(0, --spacing(8));
+  --content: min(--spacing(132), 100% - var(--gutter) * 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [feature-start] var(--feature)
+    [popout-start] var(--popout)
+    [content-start] var(--content) [content-end]
+    var(--popout) [popout-end]
+    var(--feature) [feature-end]
+    var(--full) [full-end];
+
+  & > * {
+    grid-column: content;
+  }
+}
+
+@utility breakout-max-gutter-* {
+  --gutter-max: --spacing(--value(integer));
+}
+
+@utility breakout-min-gutter-* {
+  --gutter-min: --spacing(--value(integer));
+}
+
+@utility breakout-full {
+  grid-column: full;
+}
+
+@utility breakout-popout {
+  grid-column: popout;
+}
+
+@utility breakout-feature {
+  grid-column: feature;
+}
+
+@utility breakout-none {
+  grid-column: unset;
+}

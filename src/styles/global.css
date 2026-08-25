@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "grid-breakout.css";
+
+@layer base {
+  html,
+  body {
+    @apply size-full;
+  }
+}

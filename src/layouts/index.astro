@@ -1,0 +1,45 @@
+---
+import "@/styles/global.css";
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  "main:class"?: string[] | string;
+}
+const { title = "Portifólio", description = "", "main:class": mainClass = [] } = Astro.props;
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={`MediaWeek | ${title}`}
+      description={description}
+      openGraph={{
+        basic: {
+          type: "website",
+          title: `MediaWeek | ${title}`,
+          image: "/favicon.svg",
+          url: "https://ca-smd.github.io/mediaweek",
+        },
+        optional: {
+          description,
+          locale: "pt-BR",
+        },
+      }}
+    />
+    <slot name="head" />
+  </head>
+  <body class="">
+    <!-- Navbar here -->
+    <main class:list={[""].concat(mainClass)}>
+      <slot />
+    </main>
+    <!-- Footer here -->
+  </body>
+</html>

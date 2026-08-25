@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Astro Build",
+    "command": "deno task build",
+    "reveal": "no_focus",
+    "hide": "on_success",
+    "save": "all",
+  },
+  {
+    "label": "Astro Preview",
+    "command": "deno task preview",
+    "reveal": "no_focus",
+    "hide": "on_success",
+    "save": "all",
+  },
+  {
+    "label": "Astro Dev",
+    "command": "deno task dev",
+    "reveal": "no_focus",
+    "hide": "on_success",
+    "save": "all",
+  },
+]
