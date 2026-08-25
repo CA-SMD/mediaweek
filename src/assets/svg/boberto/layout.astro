@@ -1,0 +1,16 @@
+---
+import { type Props } from "./index";
+
+const { size, ...props } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size ? size * 0.96 : 128}
+  height={size ?? 133}
+  fill="none"
+  viewBox="0 0 128 133"
+  {...props}
+>
+  <slot />
+</svg>
