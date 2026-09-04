@@ -7,6 +7,8 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
+  base: "/mediaweek/",
+
   vite: {
     plugins: [tailwindcss()],
     server: {
