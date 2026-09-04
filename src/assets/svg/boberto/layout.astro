@@ -1,16 +1,18 @@
 ---
 import { type Props } from "./index";
 
-const { size, ...props } = Astro.props;
+const { size, class: className, ...props } = Astro.props;
 ---
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={size ? size * 0.96 : 128}
-  height={size ?? 133}
+  width={size ? size : "128"}
+  height={size ? size : "128"}
+  viewBox="0 0 128 128"
   fill="none"
-  viewBox="0 0 128 133"
+  xmlns="http://www.w3.org/2000/svg"
+  class:list={["aspect-square w-auto", className]}
   {...props}
 >
+  <title>Mascote Media Week Boberto</title>
   <slot />
 </svg>
