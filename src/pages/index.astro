@@ -2,13 +2,18 @@
 import Index from "@/layouts/index.astro";
 
 import { Separator } from "@/components/separator";
+import { BobertoDark } from "@/assets/svg/boberto";
 
 // import { BobertoBright, BobertoDark } from "@/assets/svg/boberto";
 ---
 
 <Index main:class={["flex flex-col"]}>
-  <section role="banner" class="min-h-[80dvh]">
+  <section role="banner" class="min-h-[80dvh] flex justify-center items-center">
     <!-- Banner Thingy Here -->
+    <div class="px-8 py-12 bg-dark-900 max-w-120 flex flex-col gap-3 justify-center items-center rounded-2xl">
+      <BobertoDark size={128} />
+      <h1 class="text-5xl font-black">! Em Construção !</h1>
+    </div>
   </section>
   <Separator />
   <div class="bg-bright-50 grow"></div>
