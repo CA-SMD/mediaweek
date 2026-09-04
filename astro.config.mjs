@@ -7,6 +7,7 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ca-smd.github.io/mediaweek",
   base: "/mediaweek/",
 
   vite: {
@@ -20,7 +21,6 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  site: "https://ca-smd.github.io/mediaweek",
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [

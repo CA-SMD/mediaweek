@@ -5,38 +5,57 @@ import { SEO } from "astro-seo";
 import type { AstroBuiltinAttributes } from "astro";
 
 import Navbar from "@/components/navbar.astro";
+import type { $brand } from "astro:schema";
 
 interface Props {
   title?: string;
   description?: string;
   "main:class"?: AstroBuiltinAttributes["class:list"];
 }
-const { title = "Portifólio", description = "", "main:class": mainClass = [] } = Astro.props;
+
+const basedPathname = (href: string) => new URL(href === "/" ? "." : href, Astro.url).pathname;
+const defaultDescription = "Venha participar do MediaWeek! Oficinas, Palestras, Vila dos Artistas e mais!";
+
+const { title = "Info", description = defaultDescription, "main:class": mainClass = [] } = Astro.props;
+const { SITE: site, BASE_URL: base } = import.meta.env;
+
+const favicon = basedPathname("favicon.svg");
+const faviconico = basedPathname("favicon.ico");
+const ogimage = basedPathname("ogimage.png");
 ---
 
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+    <link rel="icon" href={faviconico} />
+    <link rel="sitemap" href={base + "/sitemap-index.xml"} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <Font cssVariable="--astro-font-jaro" />
     <Font cssVariable="--astro-font-jura" />
     <SEO
-      title={`MediaWeek | ${title}`}
+      title={"MediaWeek | " + title}
       description={description}
       openGraph={{
         basic: {
           type: "website",
-          title: `MediaWeek | ${title}`,
-          image: "/favicon.svg",
+          title: "MediaWeek | " + title,
+          image: ogimage,
           url: "https://ca-smd.github.io/mediaweek",
         },
         optional: {
           description,
           locale: "pt-BR",
         },
+      }}
+      twitter={{
+        image: ogimage,
+        card: "summary_large_image",
+        description,
+        imageAlt: "MediaWeek Logo",
+        title: "MediaWeek | " + title,
+        site,
       }}
     />
     <slot name="head" />
