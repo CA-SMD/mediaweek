@@ -1,10 +1,15 @@
 ---
 import Index from "@/layouts/index.astro";
 
-import { BobertoBright, BobertoDark } from "@/assets/svg/boberto";
+import { Separator } from "@/components/separator";
+
+// import { BobertoBright, BobertoDark } from "@/assets/svg/boberto";
 ---
 
-<Index>
-  <BobertoBright />
-  <BobertoDark />
+<Index main:class={["flex flex-col"]}>
+  <section role="banner" class="min-h-[80dvh]">
+    <!-- Banner Thingy Here -->
+  </section>
+  <Separator />
+  <div class="bg-bright-50 grow"></div>
 </Index>
