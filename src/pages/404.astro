@@ -1,0 +1,12 @@
+---
+import Index from "@/layouts/index.astro";
+import { BobertoDark } from "@/assets/svg/boberto";
+---
+
+<Index main:class={["py-16 flex flex-col items-center justify-center gap-2 text-center"]}>
+  <div class="flex gap-4 items-center">
+    <BobertoDark />
+    <h1 class="text-9xl font-black font-jaro">404</h1>
+  </div>
+  <p class="text-xl">Não encontramos essa página</p>
+</Index>
