@@ -8,21 +8,21 @@ import Link from "@/components/link.astro";
 const links = [
   {
     name: "info",
-    href: "/info",
+    href: "info",
   },
   {
     name: "cronograma",
-    href: "/cronograma",
+    href: "cronograma",
   },
   {
     name: "faq",
-    href: "/faq",
+    href: "faq",
   },
 ];
 ---
 
 <nav class="sticky flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50">
-  <Link class="flex gap-1 items-end" href="/" aria-label="Início">
+  <Link class="flex gap-1 items-end" href="." aria-label="Início">
     <BobertoBright size={32} />
     <MediaWeekTypo size={30} variant="dark" />
   </Link>
