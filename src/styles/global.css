@@ -2,6 +2,12 @@
 @import "grid-breakout.css";
 @import "mediaweek.css";
 
+@theme inline {
+  --font-jaro: var(--astro-font-jaro);
+  --font-jura: var(--astro-font-jura);
+  --default-font-family: var(--font-jura);
+}
+
 @layer base {
   html,
   body {

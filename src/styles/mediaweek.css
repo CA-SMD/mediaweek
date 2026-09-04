@@ -1,15 +1,86 @@
 @theme {
   --color-design: oklch(0.835 0.16 326.887);
+  --color-design-50: oklch(0.95 0.04 -34.5);
+  --color-design-100: oklch(0.95 0.048 -34.4);
+  --color-design-200: oklch(0.91 0.077 -34.2);
+  --color-design-300: oklch(0.88 0.111 -33.9);
+  --color-design-400: oklch(0.86 0.131 -33.7);
+  --color-design-500: oklch(0.84 0.152 -34);
+  --color-design-600: oklch(0.67 0.151 -33.7);
+  --color-design-700: oklch(0.52 0.151 -33.8);
+  --color-design-800: oklch(0.37 0.129 -33.8);
+  --color-design-900: oklch(0.23 0.105 -34.7);
+  --color-design-950: oklch(0.15 0.067 -36.7);
+
   --color-audiovisual: oklch(0.791 0.181 159.299);
+  --color-audiovisual-50: oklch(0.95 0.069 163.9);
+  --color-audiovisual-100: oklch(0.95 0.078 161.6);
+  --color-audiovisual-200: oklch(0.92 0.125 160.3);
+  --color-audiovisual-300: oklch(0.89 0.176 159);
+  --color-audiovisual-400: oklch(0.84 0.175 159.2);
+  --color-audiovisual-500: oklch(0.79 0.175 159.1);
+  --color-audiovisual-600: oklch(0.64 0.155 155.2);
+  --color-audiovisual-700: oklch(0.51 0.137 150.1);
+  --color-audiovisual-800: oklch(0.37 0.108 147);
+  --color-audiovisual-900: oklch(0.25 0.08 143.1);
+  --color-audiovisual-950: oklch(0.15 0.049 142.1);
+
   --color-sistemas: oklch(0.673 0.154 239.919);
+  --color-sistemas-50: oklch(0.96 0.055 -163.7);
+  --color-sistemas-100: oklch(0.94 0.058 -151.9);
+  --color-sistemas-200: oklch(0.89 0.091 -146);
+  --color-sistemas-300: oklch(0.82 0.127 -139);
+  --color-sistemas-400: oklch(0.76 0.148 -126.2);
+  --color-sistemas-500: oklch(0.68 0.154 -122.2);
+  --color-sistemas-600: oklch(0.56 0.14 -116.7);
+  --color-sistemas-700: oklch(0.45 0.13 -111.1);
+  --color-sistemas-800: oklch(0.33 0.105 -108);
+  --color-sistemas-900: oklch(0.22 0.086 -103.6);
+  --color-sistemas-950: oklch(0.13 0.086 -99.3);
+
   --color-jogos: oklch(0.678 0.211 29.071);
-  --color-dark: oklch(0.226 0 0);
-  --color-bright: oklch(0.992 0.007 80.721);
+  --color-jogos-50: oklch(0.92 0.042 43.7);
+  --color-jogos-100: oklch(0.9 0.052 38.3);
+  --color-jogos-200: oklch(0.84 0.093 34.4);
+  --color-jogos-300: oklch(0.76 0.145 31.2);
+  --color-jogos-400: oklch(0.72 0.177 29.7);
+  --color-jogos-500: oklch(0.68 0.211 29);
+  --color-jogos-600: oklch(0.55 0.211 29);
+  --color-jogos-700: oklch(0.45 0.186 29.2);
+  --color-jogos-800: oklch(0.35 0.142 29.2);
+  --color-jogos-900: oklch(0.25 0.102 29.2);
+  --color-jogos-950: oklch(0.18 0.073 29.2);
+
+  --color-dark: oklch(0.23 0 90);
+  --color-dark-50: oklch(0.98 0 90);
+  --color-dark-100: oklch(0.94 0 90);
+  --color-dark-200: oklch(0.88 0 90);
+  --color-dark-300: oklch(0.8 0 90);
+  --color-dark-400: oklch(0.71 0 90);
+  --color-dark-500: oklch(0.6 0 90);
+  --color-dark-600: oklch(0.51 0 90);
+  --color-dark-700: oklch(0.43 0 90);
+  --color-dark-800: oklch(0.35 0 90);
+  --color-dark-900: oklch(0.29 0 90);
+  --color-dark-950: oklch(0.23 0 90);
+
+  --color-bright: oklch(0.99 0.007 79.2);
+  --color-bright-50: oklch(0.99 0.007 79.2);
+  --color-bright-100: oklch(0.95 0.007 79.2);
+  --color-bright-200: oklch(0.88 0.011 75.1);
+  --color-bright-300: oklch(0.79 0.014 76.7);
+  --color-bright-400: oklch(0.68 0.015 76.7);
+  --color-bright-500: oklch(0.55 0.015 80.9);
+  --color-bright-600: oklch(0.45 0.014 78.2);
+  --color-bright-700: oklch(0.36 0.015 78.2);
+  --color-bright-800: oklch(0.27 0.012 76.6);
+  --color-bright-900: oklch(0.19 0.011 79.1);
+  --color-bright-950: oklch(0.12 0.009 72.2);
 }
 
 @layer base {
   html,
   body {
-    @apply bg-dark text-bright;
+    @apply bg-dark-950 text-bright-50;
   }
 }
