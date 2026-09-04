@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig, fontProviders, passthroughImageService } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
@@ -20,4 +20,17 @@ export default defineConfig({
   },
   site: "https://ca-smd.github.io/mediaweek",
   integrations: [sitemap(), robotsTxt()],
+
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Jaro",
+      cssVariable: "--astro-font-jaro",
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Jura",
+      cssVariable: "--astro-font-jura",
+    },
+  ],
 });
