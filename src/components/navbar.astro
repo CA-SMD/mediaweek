@@ -1,0 +1,21 @@
+---
+import { MenuIcon } from "@lucide/astro";
+
+import { BobertoBright } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/mediaweek-typo.astro";
+---
+
+<nav class="sticky flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50">
+  <a class="flex gap-1 items-end" href="/" aria-label="Início">
+    <BobertoBright size={32} />
+    <MediaWeekTypo size={30} variant="dark" />
+  </a>
+
+  <MenuIcon size={32} class="md:hidden" />
+
+  <div class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
+    <a href="/info">info</a>
+    <a href="/cronograma">cronograma</a>
+    <a href="/faq">faq</a>
+  </div>
+</nav>
