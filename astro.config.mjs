@@ -7,7 +7,7 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ca-smd.github.io/mediaweek",
+  site: "https://ca-smd.github.io/",
   base: "/mediaweek/",
 
   vite: {

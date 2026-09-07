@@ -1,0 +1,24 @@
+{
+    "languages": {
+        "Astro": {
+            "preferred_line_length": 120,
+            "soft_wrap": "editor_width",
+            "tab_size": 2,
+        },
+        "JavaScript": {
+            "preferred_line_length": 120,
+            "soft_wrap": "editor_width",
+            "tab_size": 2,
+        },
+        "TypeScript": {
+            "preferred_line_length": 120,
+            "soft_wrap": "editor_width",
+            "tab_size": 2,
+        },
+        "TSX": {
+            "preferred_line_length": 120,
+            "soft_wrap": "editor_width",
+            "tab_size": 2,
+        },
+    },
+}
