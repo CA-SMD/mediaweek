@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders, passthroughImageService } from "astro/config";
+import { defineConfig, fontProviders /*passthroughImageService*/ } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
@@ -18,9 +18,9 @@ export default defineConfig({
       },
     },
   },
-  image: {
-    service: passthroughImageService(),
-  },
+  // image: {
+  //   service: passthroughImageService(),
+  // },
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [
