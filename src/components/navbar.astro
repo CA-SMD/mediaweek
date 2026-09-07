@@ -26,9 +26,15 @@ const links = [
     <MediaWeekTypo size={30} variant="dark" />
   </a>
 
-  <MenuIcon size={32} class="md:hidden" />
+  <button popovertarget="sidebar-popover" class="md:hidden cursor-pointer [anchor-name:--menu]">
+    <MenuIcon size={32} />
+    <p class="sr-only">Menu de Navegação</p>
+  </button>
 
   <div class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
     {links.map(({ href, name }) => <a href={"./" + href}>{name}</a>)}
   </div>
+<div popover="auto" id="sidebar-popover" class="bg-dark-950 backdrop:bg-dark-950/50 absolute [position-anchor:--menu] top-[anchor(top)] right-[anchor(right)] left-auto w-60 text-bright-50 p-6 open:flex flex-col gap-5 border border-bright-50 rounded-2xl">
+  {links.map(({ href, name }) => <a href={"./" + href} class="hover:underline focus-within:underline">{name}</a>)}
+</div>
 </nav>
