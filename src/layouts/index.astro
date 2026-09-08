@@ -56,11 +56,12 @@ const baseURL = new URL(base, site);
     />
     <slot name="head" />
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col min-h-dvh h-min relative">
     <Navbar />
     <main class:list={["grow", mainClass]}>
       <slot />
     </main>
+    <div class="min-h-30"></div>
     <!-- Footer here -->
   </body>
 </html>

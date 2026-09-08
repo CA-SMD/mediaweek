@@ -1,18 +1,69 @@
 ---
 import Index from "@/layouts/index.astro";
 
-import { Separator } from "@/components/separator";
 import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/mediaweek-typo.astro";
+
+import { Separator } from "@/components/separator";
+import InfoCard from "@/components/info-card.astro";
+import SectionHeader from "@/components/section-header.astro";
 ---
 
 <Index main:class={["flex flex-col"]} title="Home">
   <section role="banner" class="min-h-[80dvh] flex justify-center items-center">
     <!-- Banner Thingy Here -->
-    <div class="px-8 py-12 bg-dark-900 max-w-120 flex flex-col gap-3 justify-center items-center rounded-2xl">
-      <BobertoDark size={128} />
-      <h1 class="text-5xl font-black">! Em Construção !</h1>
+    <div
+      class="px-8 md:px-12 py-12 bg-dark-900 max-md:max-w-120 flex flex-col gap-4 justify-center items-center rounded-2xl"
+    >
+      <div class="flex flex-col md:flex-row gap-3 md:items-end">
+        <BobertoDark class="h-24 md:h-40" />
+        <MediaWeekTypo class="h-24 md:h-34" variant="bright" />
+      </div>
+      <div class="flex flex-col gap-1 text-center">
+        <p class="font-jaro text-6xl md:text-8xl">2026!</p>
+        <p class="text-xs font-light">Em planejamento!</p>
+      </div>
     </div>
   </section>
   <Separator />
-  <div class="bg-bright-50 grow"></div>
+  <article class="bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950">
+    <div class="flex justify-between mb-12 breakout-popout">
+      <InfoCard icon="clock">14:00 às 18:00</InfoCard>
+      <InfoCard icon="pin">Bloco SMD UFC Campos PICI</InfoCard>
+      <InfoCard icon="calendar">Dias 19 a 23 de Outubro</InfoCard>
+    </div>
+    <SectionHeader variant="design">Sobre o Evento</SectionHeader>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia, architecto laudantium cupiditate accusamus eius impedit, error delectus cum accusantium molestiae tempore aliquam necessitatibus dolorum odio optio id pariatur nisi.</p>
+
+    <SectionHeader variant="audiovisual">Atrações</SectionHeader>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia, architecto laudantium cupiditate accusamus eius impedit, error delectus cum accusantium molestiae tempore aliquam necessitatibus dolorum odio optio id pariatur nisi.</p>
+
+    <SectionHeader variant="sistemas">Palestrantes</SectionHeader>
+
+    <div class="breakout-full flex gap-4 overflow-hidden">
+      {new Array(20).fill(() => "").map(() => <div class="aspect-square min-w-30 h-auto bg-dark-500"></div>)}
+    </div>
+
+    <SectionHeader variant="jogos">Inscrições</SectionHeader>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia, architecto laudantium cupiditate accusamus eius impedit, error delectus cum accusantium molestiae tempore aliquam necessitatibus dolorum odio optio id pariatur nisi.</p>
+
+    <SectionHeader>Local</SectionHeader>
+
+    <div
+      class="relative my-4 h-auto overflow-hidden max-w-full rounded-2xl breakout-popout aspect-video border-2 border-dark-950"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.280889066288!2d-38.57922750000001!3d-3.7488853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74bc2aea236af%3A0x6ea13d6e1ea018e1!2sBloco%20do%20Sistemas%20e%20M%C3%ADdias%20Digitais!5e0!3m2!1sen!2sbr!4v1788813084310!5m2!1sen!2sbr"
+        class="absolute top-0 left-0 size-full border-0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <!-- <blockquote class="bg-dark-400/70 text-dark-950 border-l-2 border-dark-950 p-4">
+      <b class="uppercase font-black">Alerta!</b>
+    </blockquote> -->
+  </article>
 </Index>
