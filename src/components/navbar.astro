@@ -1,13 +1,13 @@
 ---
-import { MenuIcon } from "@lucide/astro";
+import { MenuIcon, XIcon } from "@lucide/astro";
 
 import { BobertoBright } from "@/assets/svg/boberto";
 import MediaWeekTypo from "@/assets/svg/mediaweek-typo.astro";
 
 const links = [
   {
-    name: "info",
-    href: "info",
+    name: "ingressos",
+    href: "ingressos",
   },
   {
     name: "cronograma",
@@ -20,21 +20,44 @@ const links = [
 ];
 ---
 
-<nav class="sticky top-0 flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50">
+<nav
+  class="sticky top-0 flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50 [anchor-name:--menu]"
+>
   <a class="flex gap-1 items-end" href="./" aria-label="Início">
     <BobertoBright size={32} />
     <MediaWeekTypo size={30} variant="dark" />
   </a>
 
-  <button popovertarget="sidebar-popover" class="md:hidden cursor-pointer [anchor-name:--menu]">
-    <MenuIcon size={32} />
+  <button popovertarget="sidebar-popover" class="md:hidden cursor-pointer group">
+    <MenuIcon size={32} class="group-has-open:hidden" />
+    <XIcon size={32} class="not-group-has-open:hidden" />
     <p class="sr-only">Menu de Navegação</p>
+    <ul
+      popover="auto"
+      id="sidebar-popover"
+      class="[position-anchor:--menu] top-[calc(anchor(bottom))] right-[anchor(right)] left-auto w-60 py-6 px-8 open:flex flex-col gap-5 border-l-2 border-b-2 border-dark-950 bg-bright-50 uppercase font-jaro text-start"
+    >
+      {
+        links.map(({ href, name }) => (
+          <li class="list-disc">
+            <a href={"./" + href} class="hover:underline focus-within:underline">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </button>
 
-  <div class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
-    {links.map(({ href, name }) => <a href={"./" + href}>{name}</a>)}
-  </div>
-<div popover="auto" id="sidebar-popover" class="bg-dark-950 backdrop:bg-dark-950/50 absolute [position-anchor:--menu] top-[anchor(top)] right-[anchor(right)] left-auto w-60 text-bright-50 p-6 open:flex flex-col gap-5 border border-bright-50 rounded-2xl">
-  {links.map(({ href, name }) => <a href={"./" + href} class="hover:underline focus-within:underline">{name}</a>)}
-</div>
+  <ul class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
+    {
+      links.map(({ href, name }) => (
+        <li>
+          <a href={"./" + href} class="hover:underline focus-within:underline">
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </nav>
