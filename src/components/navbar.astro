@@ -20,9 +20,7 @@ const links = [
 ];
 ---
 
-<nav
-  class="sticky top-0 flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50 [anchor-name:--menu]"
->
+<nav class="sticky top-0 flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50 [anchor-name:--menu] z-10">
   <a class="flex gap-1 items-end" href="./" aria-label="Início">
     <BobertoBright size={32} />
     <MediaWeekTypo size={30} variant="dark" />
@@ -37,27 +35,23 @@ const links = [
       id="sidebar-popover"
       class="[position-anchor:--menu] top-[calc(anchor(bottom))] right-[anchor(right)] left-auto w-60 py-6 px-8 open:flex flex-col gap-5 border-l-2 border-b-2 border-dark-950 bg-bright-50 uppercase font-jaro text-start"
     >
-      {
-        links.map(({ href, name }) => (
-          <li class="list-disc">
-            <a href={"./" + href} class="hover:underline focus-within:underline">
-              {name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </button>
-
-  <ul class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
-    {
-      links.map(({ href, name }) => (
-        <li>
+      {links.map(({ href, name }) => (
+        <li class="list-disc">
           <a href={"./" + href} class="hover:underline focus-within:underline">
             {name}
           </a>
         </li>
-      ))
-    }
+      ))}
+    </ul>
+  </button>
+
+  <ul class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
+    {links.map(({ href, name }) => (
+      <li>
+        <a href={"./" + href} class="hover:underline focus-within:underline">
+          {name}
+        </a>
+      </li>
+    ))}
   </ul>
 </nav>

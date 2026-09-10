@@ -35,7 +35,7 @@
 }
 
 @utility breakout-popout-* {
-    --popout: minmax(0, --spacing(--value(integer)));
+  --popout: minmax(0, --spacing(--value(integer)));
 }
 
 @utility breakout-popout {
@@ -43,7 +43,7 @@
 }
 
 @utility breakout-feature-* {
-    --feature: minmax(0, --spacing(--value(integer)));
+  --feature: minmax(0, --spacing(--value(integer)));
 }
 
 @utility breakout-feature {
@@ -51,7 +51,7 @@
 }
 
 @utility breakout-content-* {
-    --popout: min(--spacing(--value(integer)), 100% - var(--gutter) * 2);
+  --popout: min(--spacing(--value(integer)), 100% - var(--gutter) * 2);
 }
 
 @utility breakout-none {
