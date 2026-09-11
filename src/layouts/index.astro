@@ -44,6 +44,7 @@ const faviconICO = basedURL("./favicon.ico");
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="var(--color-bright-50,#FFFCF7)" />
+    <meta name="google-site-verification" content="JHDpLcyBOPSmJo6cSDO-77s7olYwZIhcz2RrH6G1AHs" />
     <Font cssVariable="--astro-font-jaro" />
     <Font cssVariable="--astro-font-jura" />
     <SEO
@@ -60,6 +61,14 @@ const faviconICO = basedURL("./favicon.ico");
           siteName: "Media Week | CA SMD | UFC",
           description,
           locale: "pt-BR",
+        },
+        image: {
+          width: 1200,
+          height: 630,
+          alt: "MediaWeek Logo",
+          secureUrl: ogimage,
+          type: "image/png",
+          url: ogimage,
         },
       }}
       twitter={{
