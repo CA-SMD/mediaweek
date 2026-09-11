@@ -1,8 +1,9 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const styles = tv({
-  base: "text-center py-4 px-24 breakout-popout text-bright-50 rounded-2xl underline uppercase font-jaro text-4xl",
+  base: "text-center p-4 breakout-popout text-bright-50 rounded-2xl underline uppercase font-jaro text-2xl md:text-4xl whitespace-nowrap",
   variants: {
     variant: {
       default: "bg-dark-950",
@@ -17,13 +18,14 @@ const styles = tv({
   },
 });
 
-interface Props extends VariantProps<typeof styles> {
-  class?: string;
+interface Props extends VariantProps<typeof styles>, HTMLAttributes<"h2"> {
+  "anchor:class"?: string;
 }
 
-const { variant, class: className } = Astro.props;
+const { variant, class: className, "anchor:class": anchorClass, id, ...props } = Astro.props;
 ---
 
-<h2 class:list={styles({ variant, className })}>
+<span class="block h-16.5 -mt-16.5 invisible" id={id} class:list={anchorClass}></span>
+<h2 class:list={styles({ variant, className })} {...props}>
   <slot />
 </h2>
