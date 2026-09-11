@@ -1,8 +1,10 @@
 ---
 import "@/styles/global.css";
+
+import { cn } from "tailwind-variants";
+
 import { Font } from "astro:assets";
 import { SEO } from "astro-seo";
-import type { AstroBuiltinAttributes } from "astro";
 
 import Navbar from "@/components/navbar.astro";
 import Footer from "@/components/footer.astro";
@@ -10,7 +12,7 @@ import Footer from "@/components/footer.astro";
 interface Props {
   title?: string;
   description?: string;
-  "main:class"?: AstroBuiltinAttributes["class:list"];
+  "main:class"?: string;
 }
 
 const defaultDescription = "Venha participar do MediaWeek! Oficinas, Palestras, Vila dos Artistas e mais!";
@@ -59,7 +61,7 @@ const baseURL = new URL(base, site);
   </head>
   <body class="flex flex-col min-h-dvh h-min relative">
     <Navbar />
-    <main class:list={["grow", mainClass]}>
+    <main class:list={cn("grow", mainClass)}>
       <slot />
     </main>
     <Footer />
