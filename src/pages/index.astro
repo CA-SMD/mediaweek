@@ -4,7 +4,7 @@ import Index from "@/layouts/index.astro";
 import { BobertoDark } from "@/assets/svg/boberto";
 import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
 
-import { Separator } from "@/components/separator";
+import Separator from "@/components/separator.astro";
 import InfoCard from "@/components/info-card.astro";
 import SectionHeader from "@/components/section-header.astro";
 ---
@@ -33,7 +33,7 @@ import SectionHeader from "@/components/section-header.astro";
       <InfoCard icon="calendar">Dias 19 a 23 de Outubro</InfoCard>
     </div>
 
-    <SectionHeader variant="design" id="sobre">
+    <SectionHeader variant="audiovisual" id="sobre">
       Sobre o Evento
     </SectionHeader>
     <p>O MediaWeek voltará esse ano!</p>
@@ -53,13 +53,13 @@ import SectionHeader from "@/components/section-header.astro";
       Entre em Contato
     </a> -->
 
-    <SectionHeader variant="audiovisual" id="atracoes">
+    <SectionHeader variant="sistemas" id="atracoes">
       Atrações
     </SectionHeader>
     <p>As atrações do evento ainda serão anunciadas!</p>
     <p>Em breve as inscrições de palestras/oficinas/mesa-redonda/etc vão estar disponíveis!</p>
 
-    <SectionHeader variant="sistemas" id="palestrantes">
+    <SectionHeader variant="jogos" id="palestrantes">
       Palestrantes
     </SectionHeader>
     <p>
@@ -77,7 +77,7 @@ import SectionHeader from "@/components/section-header.astro";
       nesse site e nos canais oficiais de comunicação do C.A. SMD
     </p>
 
-    <SectionHeader variant="jogos" id="artists-alley" lang="en">
+    <SectionHeader variant="design" id="artists-alley" lang="en">
       Artists Alley
     </SectionHeader>
     <p>
