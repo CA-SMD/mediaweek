@@ -15,22 +15,35 @@ interface Props {
   "main:class"?: string;
 }
 
-const defaultDescription = "Venha participar do MediaWeek! Oficinas, Palestras, Vila dos Artistas e mais!";
+const defaultDescription =
+  "Venha participar do MediaWeek! Oficinas, Palestras, Vila dos Artistas e mais! A Semana Acadêmica do curso de Sistemas e Mídias Digitais na UFC Campos do PICI";
 
 const { title = "Info", description = defaultDescription, "main:class": mainClass = [] } = Astro.props;
 const { SITE: site, BASE_URL: base } = import.meta.env;
 const baseURL = new URL(base, site);
+const basedURL = (href: string) => {
+  const r = new URL(baseURL);
+  r.pathname += href;
+  return r;
+};
+const ogimage = basedURL("./ogimage.png");
+const faviconSVG = basedURL("./favicon.svg");
+const faviconPNG = basedURL("./favicon.png");
+const faviconICO = basedURL("./favicon.ico");
 ---
 
 <html lang="pt-BR">
   <head>
     <base href={base} />
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href={faviconSVG} />
+    <link rel="icon" type="image/ico" sizes="any" href={faviconICO} />
+    <link rel="icon" type="image/png" sizes="256x256" href={faviconPNG} />
+    <link rel="apple-touch-icon" sizes="256x256" href={faviconPNG} />
     <link rel="sitemap" href="./sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="var(--color-bright-50,#FFFCF7)" />
     <Font cssVariable="--astro-font-jaro" />
     <Font cssVariable="--astro-font-jura" />
     <SEO
@@ -40,16 +53,17 @@ const baseURL = new URL(base, site);
         basic: {
           type: "website",
           title: "MediaWeek | " + title,
-          image: "./ogimage.png",
+          image: ogimage.toString(),
           url: baseURL,
         },
         optional: {
+          siteName: "Media Week | CA SMD | UFC",
           description,
           locale: "pt-BR",
         },
       }}
       twitter={{
-        image: "./ogimage.png",
+        image: ogimage.toString(),
         card: "summary_large_image",
         description,
         imageAlt: "MediaWeek Logo",
