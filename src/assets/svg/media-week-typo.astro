@@ -9,7 +9,15 @@ const colorDark = "var(--color-dark-950,#1c1c1c)";
 const colorBright = "var(--color-bright-50,#fffcf7)";
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" height={size ? size : "110"} fill="none" viewBox="0 0 238 110" {...props}>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  height={size ? size : "110"}
+  fill="none"
+  viewBox="0 0 238 110"
+  aria-label="Media Week Logo"
+  {...props}
+>
   <title>Media Week Logo</title>
   <path
     fill={variant !== "dark" ? colorBright : colorDark}
