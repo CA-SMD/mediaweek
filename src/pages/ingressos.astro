@@ -1,0 +1,55 @@
+---
+import Index from "@/layouts/index.astro";
+import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
+import { Separator } from "@/components/separator";
+import SectionHeader from "@/components/section-header.astro";
+---
+
+<Index main:class={["flex flex-col"]} title="Info">
+  <section role="banner" class="flex flex-col py-16 gap-2 items-center justify-center">
+    <div class="flex items-center justify-center">
+      <BobertoDark />
+      <MediaWeekTypo variant="bright" />
+    </div>
+    <h1 class="font-jaro text-6xl md:text-7xl">Ingressos!</h1>
+  </section>
+  <Separator />
+  <article class="bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950">
+    <SectionHeader variant="audiovisual" id="visitantes">
+      Para Visitantes
+    </SectionHeader>
+    <h3 class="text-3xl text-center font-medium">Tickets Aqui</h3>
+    <button
+      disabled
+      class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+    >
+      Comprar Tickets
+    </button>
+    <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+
+    <SectionHeader variant="design" id="artists-alley">
+      Para Vila dos Artistas
+    </SectionHeader>
+    <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
+    <button
+      disabled
+      class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+    >
+      Inscrever para o <span lang="en">Artists Alley</span>
+    </button>
+    <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+
+    <SectionHeader variant="sistemas" id="palestrantes">
+      Palestrantes/Oficineiros
+    </SectionHeader>
+    <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
+    <button
+      disabled
+      class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+    >
+      Cadastrar uma atividade
+    </button>
+    <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+  </article>
+</Index>
