@@ -1,18 +1,120 @@
 ---
 import Index from "@/layouts/index.astro";
 
-import { Separator } from "@/components/separator";
 import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
+
+import { Separator } from "@/components/separator";
+import InfoCard from "@/components/info-card.astro";
+import SectionHeader from "@/components/section-header.astro";
 ---
 
-<Index main:class={["flex flex-col"]} title="Home">
+<Index main:class="flex flex-col" title="Home">
   <section role="banner" class="min-h-[80dvh] flex justify-center items-center">
-    <!-- Banner Thingy Here -->
-    <div class="px-8 py-12 bg-dark-900 max-w-120 flex flex-col gap-3 justify-center items-center rounded-2xl">
-      <BobertoDark size={128} />
-      <h1 class="text-5xl font-black">! Em Construção !</h1>
+    <div class="px-8 md:px-12 py-12 bg-dark-900 max-md:max-w-120 flex flex-col gap-4 justify-center items-center rounded-2xl">
+      <div class="flex flex-col md:flex-row gap-3 md:items-end">
+        <BobertoDark class="h-24 md:h-40" />
+        <MediaWeekTypo class="h-24 md:h-34" variant="bright" />
+        <h1 class="sr-only" lang="en">
+          Media Week
+        </h1>
+      </div>
+      <div class="flex flex-col gap-1 text-center">
+        <h2 class="font-jaro text-6xl md:text-8xl">2026!</h2>
+        <p class="text-xs font-light">Em planejamento!</p>
+      </div>
     </div>
   </section>
   <Separator />
-  <div class="bg-bright-50 grow"></div>
+  <article class="bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950">
+    <div class="flex justify-between mb-12 breakout-popout">
+      <InfoCard icon="clock">14:00 às 18:00</InfoCard>
+      <InfoCard icon="pin">Bloco IUVI UFC Campos PICI</InfoCard>
+      <InfoCard icon="calendar">Dias 19 a 23 de Outubro</InfoCard>
+    </div>
+
+    <SectionHeader variant="design" id="sobre">
+      Sobre o Evento
+    </SectionHeader>
+    <p>O MediaWeek voltará esse ano!</p>
+    <p>Um evento que pretende trazer para vocês, palestras, oficinas, rodas de conversas e muito mais!</p>
+    <p>
+      A Semana Acadêmica do Curso de Sistemas e Mídias Digitais irá ocorrer nos dias 19 a 23 de outubro, no bloco
+      didático Instituto Universidade Virtual.
+    </p>
+    <p>Em breve será aberto as inscrições para o evento.</p>
+    <!-- <h3 class="text-3xl text-center font-medium">Procuramos Voluntários</h3>
+    <p>Estamos a procura de voluntários para ajudar na organização do MediaWeek!</p>
+    <p>Porfavor entrar em contato por email:</p>
+    <a
+      href="mailto:casmd@virtual.ufc.br?subject=Voluntários para o MediaWeek"
+      class="py-4 px-6 bg-dark-500 text-sm md:text-base text-bright-50 text-center hover:underline focus-within:underline font-bold"
+    >
+      Entre em Contato
+    </a> -->
+
+    <SectionHeader variant="audiovisual" id="atracoes">
+      Atrações
+    </SectionHeader>
+    <p>As atrações do evento ainda serão anunciadas!</p>
+    <p>Em breve as inscrições de palestras/oficinas/mesa-redonda/etc vão estar disponíveis!</p>
+
+    <SectionHeader variant="sistemas" id="palestrantes">
+      Palestrantes
+    </SectionHeader>
+    <p>
+      As modalidades de atividades são: palestras, oficinas, mesa-redonda, exposição de trabalho e atividades lúdicas.
+    </p>
+    <p>
+      A Organização do Media Week lançará o edital para submissão de propostas para compôr a programação do evento em
+      breve!.
+    </p>
+    <p>
+      O link para a submissão estará disponível
+      <a href="./ingressos#palestrantes" class="underline px-1">
+        aqui
+      </a>
+      nesse site e nos canais oficiais de comunicação do C.A. SMD
+    </p>
+
+    <SectionHeader variant="jogos" id="artists-alley" lang="en">
+      Artists Alley
+    </SectionHeader>
+    <p>
+      Por tradição do nosso evento, faremos mais uma edição da <i class="font-semibold">Vila dos Artistas.</i>
+    </p>
+    <p>O valor de participação será definido pela organização e anunciado aqui e nos canais de comunicação.</p>
+    <p>
+      O artista poderá levar um ajudante consigo. Ambos Artista e Ajudante terão acesso ao evento inteiro além da vaga
+      na Vila.
+    </p>
+    <p>
+      O formulário para inscrição estará disponível
+      <a href="./ingressos#artists-alley" class="underline px-1">
+        aqui
+      </a>
+      no site e também nos canais oficiais de comunicação do C.A. SMD
+    </p>
+
+    <SectionHeader id="map">Venha Visitar</SectionHeader>
+    <p>
+      Ingressos estarão disponíveis
+      <a href="./ingressos#visitantes" class="underline px-1">
+        aqui
+      </a>
+      no site e também nos canais oficiais de comunicação do C.A. SMD
+    </p>
+    <div class="relative my-4 h-auto overflow-hidden max-w-full rounded-2xl breakout-popout aspect-video border-2 border-dark-950">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.280889066288!2d-38.57922750000001!3d-3.7488853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74bc2aea236af%3A0x6ea13d6e1ea018e1!2sBloco%20do%20Sistemas%20e%20M%C3%ADdias%20Digitais!5e0!3m2!1sen!2sbr!4v1788813084310!5m2!1sen!2sbr"
+        class="absolute top-0 left-0 size-full border-0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Bloco de Sistemas e Mídias Digitais na UFC Campos do PICI"
+      >
+        Bloco de Sistemas e Mídias Digitais na UFC Campos do PICI
+      </iframe>
+    </div>
+  </article>
 </Index>

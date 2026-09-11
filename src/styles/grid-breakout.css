@@ -34,12 +34,24 @@
   grid-column: full;
 }
 
+@utility breakout-popout-* {
+  --popout: minmax(0, --spacing(--value(integer)));
+}
+
 @utility breakout-popout {
   grid-column: popout;
 }
 
+@utility breakout-feature-* {
+  --feature: minmax(0, --spacing(--value(integer)));
+}
+
 @utility breakout-feature {
   grid-column: feature;
+}
+
+@utility breakout-content-* {
+  --popout: min(--spacing(--value(integer)), 100% - var(--gutter) * 2);
 }
 
 @utility breakout-none {

@@ -1,35 +1,34 @@
 ---
 import "@/styles/global.css";
+
+import { cn } from "tailwind-variants";
+
 import { Font } from "astro:assets";
 import { SEO } from "astro-seo";
-import type { AstroBuiltinAttributes } from "astro";
 
 import Navbar from "@/components/navbar.astro";
-import type { $brand } from "astro:schema";
+import Footer from "@/components/footer.astro";
 
 interface Props {
   title?: string;
   description?: string;
-  "main:class"?: AstroBuiltinAttributes["class:list"];
+  "main:class"?: string;
 }
 
-const basedPathname = (href: string) => new URL(href === "/" ? "." : href, Astro.url).pathname;
 const defaultDescription = "Venha participar do MediaWeek! Oficinas, Palestras, Vila dos Artistas e mais!";
 
 const { title = "Info", description = defaultDescription, "main:class": mainClass = [] } = Astro.props;
 const { SITE: site, BASE_URL: base } = import.meta.env;
-
-const favicon = basedPathname("favicon.svg");
-const faviconico = basedPathname("favicon.ico");
-const ogimage = basedPathname("ogimage.png");
+const baseURL = new URL(base, site);
 ---
 
 <html lang="pt-BR">
   <head>
+    <base href={base} />
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={favicon} />
-    <link rel="icon" href={faviconico} />
-    <link rel="sitemap" href={base + "/sitemap-index.xml"} />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="sitemap" href="./sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <Font cssVariable="--astro-font-jaro" />
@@ -41,8 +40,8 @@ const ogimage = basedPathname("ogimage.png");
         basic: {
           type: "website",
           title: "MediaWeek | " + title,
-          image: ogimage,
-          url: "https://ca-smd.github.io/mediaweek",
+          image: "./ogimage.png",
+          url: baseURL,
         },
         optional: {
           description,
@@ -50,21 +49,21 @@ const ogimage = basedPathname("ogimage.png");
         },
       }}
       twitter={{
-        image: ogimage,
+        image: "./ogimage.png",
         card: "summary_large_image",
         description,
         imageAlt: "MediaWeek Logo",
         title: "MediaWeek | " + title,
-        site,
+        site: baseURL.toString(),
       }}
     />
     <slot name="head" />
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col min-h-dvh h-min relative">
     <Navbar />
-    <main class:list={["grow", mainClass]}>
+    <main class:list={cn("grow", mainClass)}>
       <slot />
     </main>
-    <!-- Footer here -->
+    <Footer />
   </body>
 </html>

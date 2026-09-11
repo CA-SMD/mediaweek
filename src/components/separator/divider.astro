@@ -25,6 +25,7 @@ const { "side:left": left, "side:right": right, size, class: className, ...props
   xmlns="http://www.w3.org/2000/svg"
   class:list={["aspect-square w-auto", className]}
   role="figure"
+  aria-hidden="true"
   {...props}
 >
   <path d="M1 0L0 1H1V0Z" fill={colors[right]}></path>

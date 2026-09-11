@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "grid-breakout.css";
 @import "mediaweek.css";
+@import "marquee.css";
 
 @theme inline {
   --font-jaro: var(--astro-font-jaro);

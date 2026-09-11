@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders, passthroughImageService } from "astro/config";
+import { defineConfig, fontProviders /*passthroughImageService*/ } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
@@ -7,7 +7,7 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ca-smd.github.io/mediaweek",
+  site: "https://ca-smd.github.io/",
   base: "/mediaweek/",
 
   vite: {
@@ -18,9 +18,9 @@ export default defineConfig({
       },
     },
   },
-  image: {
-    service: passthroughImageService(),
-  },
+  // image: {
+  //   service: passthroughImageService(),
+  // },
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [

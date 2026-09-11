@@ -1,35 +1,53 @@
 ---
-import { MenuIcon } from "@lucide/astro";
+import { MenuIcon, XIcon } from "@lucide/astro";
 
 import { BobertoBright } from "@/assets/svg/boberto";
-import MediaWeekTypo from "@/assets/svg/mediaweek-typo.astro";
-import Link from "@/components/link.astro";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
 
 const links = [
   {
-    name: "info",
-    href: "info",
+    name: "ingressos",
+    href: "ingressos",
   },
   {
     name: "cronograma",
     href: "cronograma",
   },
-  {
-    name: "faq",
-    href: "faq",
-  },
 ];
 ---
 
-<nav class="sticky flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50">
-  <Link class="flex gap-1 items-end" href="." aria-label="Início">
+<nav class="sticky top-0 flex justify-between items-center p-4 border-b-2 text-dark-950 border-dark-950 bg-bright-50 [anchor-name:--menu] z-10">
+  <a class="flex gap-1 items-end" href="./" aria-label="Início">
     <BobertoBright size={32} />
     <MediaWeekTypo size={30} variant="dark" />
-  </Link>
+  </a>
 
-  <MenuIcon size={32} class="md:hidden" />
+  <button popovertarget="sidebar-popover" class="md:hidden cursor-pointer group">
+    <MenuIcon size={32} class="group-has-open:hidden" />
+    <XIcon size={32} class="not-group-has-open:hidden" />
+    <p class="sr-only">Menu de Navegação</p>
+    <ul
+      popover="auto"
+      id="sidebar-popover"
+      class="[position-anchor:--menu] top-[calc(anchor(bottom))] right-[anchor(right)] left-auto w-60 py-6 px-8 open:flex flex-col gap-5 border-l-2 border-b-2 border-dark-950 bg-bright-50 uppercase font-jaro text-start"
+    >
+      {links.map(({ href, name }) => (
+        <li class="list-disc">
+          <a href={"./" + href} class="hover:underline focus-within:underline">
+            {name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </button>
 
-  <div class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
-    {links.map(({ href, name }) => <Link href={href}>{name}</Link>)}
-  </div>
+  <ul class="md:flex justify-end items-center gap-8 font-jaro text-center uppercase hidden [&_a]:hover:underline">
+    {links.map(({ href, name }) => (
+      <li>
+        <a href={"./" + href} class="hover:underline focus-within:underline">
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
 </nav>

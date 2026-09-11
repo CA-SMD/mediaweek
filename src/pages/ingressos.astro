@@ -1,0 +1,45 @@
+---
+import Article from "@/layouts/article.astro";
+import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
+import { Separator } from "@/components/separator";
+import SectionHeader from "@/components/section-header.astro";
+---
+
+<Article title="Ingressos" banner:title="Ingressos!">
+  <SectionHeader variant="audiovisual" id="visitantes">
+    Para Visitantes
+  </SectionHeader>
+  <h3 class="text-3xl text-center font-medium">Tickets Aqui</h3>
+  <button
+    disabled
+    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+  >
+    Comprar Tickets
+  </button>
+  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+
+  <SectionHeader variant="design" id="artists-alley">
+    Para Vila dos Artistas
+  </SectionHeader>
+  <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
+  <button
+    disabled
+    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+  >
+    Inscrever para o <span lang="en">Artists Alley</span>
+  </button>
+  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+
+  <SectionHeader variant="sistemas" id="palestrantes">
+    Palestrantes/Oficineiros
+  </SectionHeader>
+  <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
+  <button
+    disabled
+    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
+  >
+    Cadastrar uma atividade
+  </button>
+  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+</Article>

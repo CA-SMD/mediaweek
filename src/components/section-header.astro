@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { tv, type VariantProps } from "tailwind-variants";
+
+import { BobertoDark, BobertoAudiovisual, BobertoDesign, BobertoJogos, BobertoSistemas } from "@/assets/svg/boberto";
+
+const styles = tv({
+  base: "has-[>_svg]:flex gap-2 text-center items-center p-4 breakout-popout text-dark-950 rounded-2xl uppercase font-jaro text-2xl md:text-3xl whitespace-nowrap",
+  variants: {
+    variant: {
+      default: "bg-dark-950 text-bright-50",
+      design: "bg-design-500",
+      audiovisual: "bg-audiovisual-500",
+      jogos: "bg-jogos-500",
+      sistemas: "bg-sistemas-500",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+interface Props extends VariantProps<typeof styles>, HTMLAttributes<"h2"> {
+  "anchor:class"?: string;
+  accent?: "dark" | "bright";
+  icon?: boolean;
+}
+
+const { variant, accent = "bright", class: className, id, icon = true, ...props } = Astro.props;
+
+const bobertos = {
+  default: BobertoDark,
+  audiovisual: BobertoAudiovisual,
+  design: BobertoDesign,
+  jogos: BobertoJogos,
+  sistemas: BobertoSistemas,
+};
+
+const Boberto = bobertos[variant ?? "default"];
+---
+
+<span class="block h-16.5 -mt-16.5 invisible" id={id}></span>
+<h2 class:list={styles({ variant, className })} {...props}>
+  {icon && <Boberto size={40} class="inline" />}
+  <slot />
+</h2>

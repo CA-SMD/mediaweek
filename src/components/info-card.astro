@@ -1,0 +1,26 @@
+---
+import { AlarmClockIcon, MapPinIcon, CalendarDaysIcon, type AstroComponent } from "@lucide/astro";
+
+type InfoIconVariant = "clock" | "pin" | "calendar";
+
+interface Props {
+  class?: string;
+  icon: InfoIconVariant;
+}
+
+const icons: Record<InfoIconVariant, AstroComponent> = {
+  clock: AlarmClockIcon,
+  pin: MapPinIcon,
+  calendar: CalendarDaysIcon,
+};
+
+const { icon, class: className } = Astro.props;
+const Icon = icons[icon];
+---
+
+<div
+  class:list={["rounded-4xl bg-dark-950 size-28 md:size-50 text-bright-50 gap-2 md:gap-4 flex flex-col text-center p-5 font-jaro text-xs md:text-xl", className]}
+>
+  <Icon class="mx-auto size-8 md:size-16" />
+  <slot />
+</div>

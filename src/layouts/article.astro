@@ -1,0 +1,35 @@
+---
+import { cn } from "tailwind-variants";
+
+import Index from "@/layouts/index.astro";
+import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
+import { Separator } from "@/components/separator";
+
+interface Props {
+  "article:class"?: string;
+  "banner:title"?: string;
+  title?: string;
+  description?: string;
+}
+
+const { "banner:title": bannerTitle = Astro.props.title, "article:class": articleClass, ...props } = Astro.props;
+const articleStyles = cn(
+  "bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950",
+  articleClass,
+);
+---
+
+<Index main:class="flex flex-col" {...props}>
+  <section role="banner" class="flex flex-col py-16 gap-2 items-center justify-center">
+    <div class="flex items-center justify-center">
+      <BobertoDark />
+      <MediaWeekTypo variant="bright" />
+    </div>
+    {bannerTitle && <h1 class="font-jaro text-6xl md:text-7xl">{bannerTitle}</h1>}
+  </section>
+  <Separator />
+  <article class={articleStyles}>
+    <slot />
+  </article>
+</Index>

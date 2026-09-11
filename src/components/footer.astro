@@ -1,0 +1,46 @@
+---
+import { BobertoDark } from "@/assets/svg/boberto";
+import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
+
+import Instagram from "simple-icons-astro/Instagram";
+---
+
+<footer class="min-h-30 bg-dark-950 p-8 grid md:grid-cols-[1fr_4fr_1fr] items-stretch gap-4">
+  <div class="flex items-center justify-center">
+    <a class="flex gap-1 items-end" href="./" aria-label="Início">
+      <BobertoDark size={48} />
+      <MediaWeekTypo size={46} variant="bright" />
+    </a>
+  </div>
+  <div class="border-y md:border-x md:border-y-0 border-l-bright-50 py-4 md:px-4 md:py-0 text-sm leading-6">
+    <ul class="grid md:grid-cols-2">
+      <!-- TODO: Adicionar crédito para todes -->
+      <li>Coordenação Geral: CA SMD</li>
+      <li>Coordenação de Projeto:</li>
+      <li>Comunicação Visual:</li>
+      <li>Coordenação Artists Alley: Amanda Lima</li>
+    </ul>
+  </div>
+  <div class="grid-cols-2 grid gap-y-4">
+    <a
+      href="mailto:casmd@virtual.ufc.br?subject=Sobre o MediaWeek"
+      class="py-4 px-6 bg-bright-50 text-sm md:text-base text-dark-950 text-center col-span-2 hover:underline focus-within:underline font-bold"
+    >
+      Entre em Contato
+    </a>
+    <a
+      href="https://www.instagram.com/ca.smd?utm_source=ig_web_button_share_sheet"
+      class="flex gap-1 items-center text-sm hover:underline focus-within:underline"
+    >
+      <Instagram size={12} />
+      ca.smd
+    </a>
+    <a
+      href="https://www.instagram.com/chapaunix?utm_source=ig_web_button_share_sheet"
+      class="flex gap-1 items-center text-sm hover:underline focus-within:underline"
+    >
+      <Instagram size={12} />
+      chapaunix
+    </a>
+  </div>
+</footer>
