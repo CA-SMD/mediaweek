@@ -1,42 +1,11 @@
 ---
 import Article from "@/layouts/article.astro";
-import SectionHeader from "@/components/section-header.astro";
+import { BobertoBright } from "@/assets/svg/boberto";
 ---
 
 <Article title="Cronograma" banner:title="Cronograma!">
-  <SectionHeader variant="audiovisual" id="visitantes">
-    Para Visitantes
-  </SectionHeader>
-  <h3 class="text-3xl text-center font-medium">Tickets Aqui</h3>
-  <button
-    disabled
-    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
-  >
-    Comprar Tickets
-  </button>
-  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
-
-  <SectionHeader variant="design" id="artists-alley">
-    Para Vila dos Artistas
-  </SectionHeader>
-  <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
-  <button
-    disabled
-    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
-  >
-    Inscrever para o <span lang="en">Artists Alley</span>
-  </button>
-  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
-
-  <SectionHeader variant="sistemas" id="palestrantes">
-    Palestrantes/Oficineiros
-  </SectionHeader>
-  <h3 class="text-3xl text-center font-medium">Inscreva-se Aqui!</h3>
-  <button
-    disabled
-    class="bg-dark-800 disabled:bg-dark-800/70 disabled:cursor-not-allowed rounded-2xl px-6 py-4 text-bright-50"
-  >
-    Cadastrar uma atividade
-  </button>
-  <blockquote class="text-xs font-light mb-16 text-center">Indisponíveis por enquanto.</blockquote>
+  <div class="mx-auto">
+    <BobertoBright size={128} class="mx-auto" />
+    <h1 class="font-bold text-4xl">A ser planejado!</h1>
+  </div>
 </Article>
