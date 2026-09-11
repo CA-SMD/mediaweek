@@ -5,6 +5,7 @@ import { SEO } from "astro-seo";
 import type { AstroBuiltinAttributes } from "astro";
 
 import Navbar from "@/components/navbar.astro";
+import Footer from "@/components/footer.astro";
 
 interface Props {
   title?: string;
@@ -61,7 +62,6 @@ const baseURL = new URL(base, site);
     <main class:list={["grow", mainClass]}>
       <slot />
     </main>
-    <div class="min-h-30"></div>
-    <!-- Footer here -->
+    <Footer />
   </body>
 </html>
