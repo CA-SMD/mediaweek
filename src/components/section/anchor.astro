@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { SectionProps } from ".";
+import { getBoberto, sectionStyles } from ".";
+import { cn } from "tailwind-variants";
+
+interface Props extends SectionProps, HTMLAttributes<"a"> {
+  disabled?: boolean;
+}
+
+const { variant, class: className, id, "icon:hide": hideIcon, disabled, ...props } = Astro.props;
+const { base, anchor } = sectionStyles({ variant, className });
+const Boberto = getBoberto(variant ?? "default");
+---
+
+{id && <span class="block h-20 -mt-20 invisible" aria-hidden="true" id={id}></span>}
+<a class:list={cn(base(), anchor())} {...props} data-disabled={disabled}>
+  {!hideIcon && <Boberto size={40} class="inline" />}
+  <slot />
+</a>

@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { SectionProps } from ".";
+import { getBoberto, sectionStyles } from ".";
+
+interface Props extends SectionProps, HTMLAttributes<"h2"> {}
+
+const { variant, class: className, id, "icon:hide": hideIcon, ...props } = Astro.props;
+const { base } = sectionStyles({ variant, className });
+const Boberto = getBoberto(variant ?? "default");
+---
+
+{id && <span class="block h-20 -mt-20 invisible" aria-hidden="true" id={id}></span>}
+<h2 class:list={base()} {...props}>
+  {!hideIcon && <Boberto size={40} class="inline" />}
+  <slot />
+</h2>
