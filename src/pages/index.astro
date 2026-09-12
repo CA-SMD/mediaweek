@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/section";
 ---
 
 <Index main:class="flex flex-col" title="Home">
-  <section role="banner" class="min-h-[80dvh] flex justify-center items-center">
+  <section role="banner" class="min-h-[70vh] flex justify-center items-center">
     <div class="px-8 md:px-12 py-12 bg-dark-900 max-md:max-w-120 flex flex-col gap-4 justify-center items-center rounded-2xl">
       <div class="flex flex-col md:flex-row gap-3 md:items-end">
         <BobertoDark class="h-24 md:h-40" />
@@ -26,9 +26,16 @@ import { SectionHeader } from "@/components/section";
     </div>
   </section>
   <Separator />
-  <article class="bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950">
-    <div class="flex justify-between mb-12 breakout-popout">
-      <InfoCard icon="clock">14:00 às 18:00</InfoCard>
+  <article class="grid bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950">
+    <div class="flex justify-center gap-8 mb-12 breakout-popout">
+      <InfoCard icon="clock">
+        <span>
+          14:00 às 18:00
+          <div aria-hidden="true" class="invisible">
+            .
+          </div>
+        </span>
+      </InfoCard>
       <InfoCard icon="pin">Bloco IUVI UFC Campos PICI</InfoCard>
       <InfoCard icon="calendar">Dias 19 a 23 de Outubro</InfoCard>
     </div>

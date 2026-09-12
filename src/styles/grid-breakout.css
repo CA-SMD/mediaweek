@@ -7,7 +7,6 @@
   --popout: minmax(0, --spacing(8));
   --content: min(--spacing(132), 100% - var(--gutter) * 2);
 
-  display: grid;
   grid-template-columns:
     [full-start] var(--full)
     [feature-start] var(--feature)
