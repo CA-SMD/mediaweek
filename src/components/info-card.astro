@@ -1,5 +1,6 @@
 ---
 import { AlarmClockIcon, MapPinIcon, CalendarDaysIcon, type AstroComponent } from "@lucide/astro";
+import { cn } from "tailwind-variants";
 
 type InfoIconVariant = "clock" | "pin" | "calendar";
 
@@ -19,8 +20,11 @@ const Icon = icons[icon];
 ---
 
 <div
-  class:list={["rounded-4xl bg-dark-950 size-28 md:size-50 text-bright-50 gap-2 md:gap-4 flex flex-col text-center p-5 font-jaro text-xs md:text-xl", className]}
+  class:list={cn(
+    "rounded-4xl bg-dark-950 size-28 md:size-40 text-bright-50 gap-2 md:gap-4 flex flex-col text-center p-5 font-jaro text-xs md:text-xl justify-center items-center",
+    className,
+  )}
 >
-  <Icon class="mx-auto size-8 md:size-16" />
+  <Icon class="size-8 md:size-16" />
   <slot />
 </div>
