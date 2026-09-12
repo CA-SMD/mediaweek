@@ -7,22 +7,22 @@ import MediaWeekTypo from "@/assets/svg/media-week-typo.astro";
 import Separator from "@/components/separator.astro";
 
 interface Props {
-  "article:class"?: string;
+  class?: string;
   "banner:title"?: string;
   title?: string;
   description?: string;
 }
 
-const { "banner:title": bannerTitle = Astro.props.title, "article:class": articleClass, ...props } = Astro.props;
+const { "banner:title": bannerTitle = Astro.props.title, class: articleClass, ...props } = Astro.props;
 const articleStyles = cn(
-  "bg-bright-50 grow breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950",
+  "bg-bright-50 grow grid breakout-grid breakout-feature-28 breakout-popout-20 gap-y-4 py-12 text-dark-950",
   articleClass,
 );
 ---
 
 <Index main:class="flex flex-col" {...props}>
   <section role="banner" class="flex flex-col py-16 gap-2 items-center justify-center">
-    <div class="flex items-center justify-center">
+    <div class="flex items-center gap-4 justify-center">
       <BobertoDark />
       <MediaWeekTypo variant="bright" />
     </div>
