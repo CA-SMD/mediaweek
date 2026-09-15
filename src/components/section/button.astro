@@ -6,8 +6,8 @@ import { cn } from "tailwind-variants";
 
 interface Props extends SectionProps, HTMLAttributes<"button"> {}
 
-const { variant, class: className, id, "icon:hide": hideIcon, ...props } = Astro.props;
-const { base, button } = sectionStyles({ variant, className });
+const { variant, breakout, class: className, id, "icon:hide": hideIcon, ...props } = Astro.props;
+const { base, button } = sectionStyles({ variant, breakout, className });
 const Boberto = getBoberto(variant ?? "default");
 ---
 

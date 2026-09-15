@@ -1,25 +1,68 @@
-import type { BobertoIcon } from "@/assets/svg/boberto";
-import { BobertoDark, BobertoAudiovisual, BobertoDesign, BobertoJogos, BobertoSistemas } from "@/assets/svg/boberto";
+import type { BobertoIcon } from "@/assets/svg/boberto/index.ts";
+import {
+  BobertoDark,
+  BobertoAudiovisual,
+  BobertoDesign,
+  BobertoJogos,
+  BobertoSistemas,
+} from "@/assets/svg/boberto/index.ts";
 
-import { tv, type VariantProps } from "tailwind-variants";
+import { type VariantProps, createTV, defaultConfig } from "tailwind-variants";
+
+const tv = createTV({
+  twMergeConfig: {
+    extend: {
+      classGroups: {
+        "breakout-grid": ["breakout-grid"],
+        "breakout-grid-cols": [
+          "breakout-full",
+          "breakout-feature",
+          "breakout-popout",
+          "breakout-content",
+          "breakout-none",
+        ],
+        "breakout-grid-cols-size": [
+          "breakout-full-*",
+          "breakout-feature-*",
+          "breakout-popout-*",
+          "breakout-content-*",
+          "breakout-none-*",
+        ],
+      },
+      conflictingClassGroupModifiers: {
+        "breakout-grid": ["grid-cols"],
+        "breakout-grid-cols-size": ["grid-cols"],
+      },
+      conflictingClassGroups: {
+        "breakout-grid-cols": ["breakout-grid-cols"],
+      },
+    },
+  },
+});
 
 export const sectionStyles = tv({
   slots: {
-    base: "has-[>_svg]:flex gap-2 text-center items-center p-4 breakout-popout text-dark-950 rounded-2xl uppercase font-jaro text-2xl md:text-3xl whitespace-nowrap",
+    base: "has-[>_svg]:flex gap-2 text-center items-center p-4 text-dark-950 rounded-2xl uppercase font-jaro text-2xl md:text-3xl whitespace-nowrap",
     button: "cursor-pointer disabled:grayscale disabled:pointer-events-none disabled:select-none",
     anchor: "cursor-pointer data-disabled:grayscale data-disabled:pointer-events-none data-disabled:select-none",
   },
   variants: {
     variant: {
-      default: "bg-dark-950 text-bright-50",
-      design: "bg-design-500",
-      audiovisual: "bg-audiovisual-500",
-      jogos: "bg-jogos-500",
-      sistemas: "bg-sistemas-500",
+      default: { base: "bg-dark-950 text-bright-50" },
+      design: { base: "bg-design-500" },
+      audiovisual: { base: "bg-audiovisual-500" },
+      jogos: { base: "bg-jogos-500" },
+      sistemas: { base: "bg-sistemas-500" },
+    },
+    breakout: {
+      content: { base: "breakout-content" },
+      popout: { base: "breakout-popout" },
+      feature: { base: "breakout-feature" },
     },
   },
   defaultVariants: {
     variant: "default",
+    breakout: "popout",
   },
 });
 

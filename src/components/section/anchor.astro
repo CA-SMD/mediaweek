@@ -8,13 +8,13 @@ interface Props extends SectionProps, HTMLAttributes<"a"> {
   disabled?: boolean;
 }
 
-const { variant, class: className, id, "icon:hide": hideIcon, disabled, ...props } = Astro.props;
-const { base, anchor } = sectionStyles({ variant, className });
+const { variant, breakout, class: className, id, "icon:hide": hideIcon, disabled, ...props } = Astro.props;
+const { base, anchor } = sectionStyles({ variant, breakout, className });
 const Boberto = getBoberto(variant ?? "default");
 ---
 
 {id && <span class="block h-20 -mt-20 invisible" aria-hidden="true" id={id}></span>}
-<a class:list={cn(base(), anchor())} {...props} data-disabled={disabled}>
+<a class:list={cn(base(), anchor())} {...props} data-disabled={disabled} data-id={id}>
   {!hideIcon && <Boberto size={40} class="inline" />}
   <slot />
 </a>
