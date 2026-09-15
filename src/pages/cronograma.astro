@@ -3,9 +3,16 @@ import Article from "@/layouts/article.astro";
 import { BobertoBright } from "@/assets/svg/boberto";
 ---
 
-<Article title="Cronograma" banner:title="Cronograma!" class="flex justify-center items-center">
+<Article
+  title="Cronograma"
+  banner:title="Cronograma!"
+  class="flex justify-center items-center text-center [&_a]:font-bold [&_a]:underline"
+>
   <div class="mx-auto">
     <BobertoBright size={128} class="mx-auto" />
     <h1 class="font-bold text-4xl">A ser planejado!</h1>
+    <p>
+      Inscreva-se como palestrante ou artista <a href="./ingressos">aqui!</a>
+    </p>
   </div>
 </Article>
