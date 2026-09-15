@@ -4,18 +4,78 @@ import { SectionAnchor } from "@/components/section";
 ---
 
 <Article title="Ingressos" banner:title="Ingressos!">
-  <SectionAnchor variant="audiovisual" id="visitantes" disabled>
+  <SectionAnchor
+    is="final-date-disable"
+    breakout="content"
+    variant="audiovisual"
+    id="visitantes"
+    disabled
+    href="./ingressos#visitantes"
+    target="_blank"
+    icon:hide={true}
+  >
     Para Visitantes
   </SectionAnchor>
   <blockquote class="text-xs font-light text-center">Indisponíveis por enquanto.</blockquote>
 
-  <SectionAnchor variant="design" id="artists-alley" disabled>
+  <SectionAnchor
+    is="final-date-disable"
+    breakout="content"
+    variant="design"
+    id="artists-alley"
+    href="https://forms.gle/qUEksbdxSagTv44k7"
+    target="_blank"
+    icon:hide={true}
+  >
     Para Vila dos Artistas
   </SectionAnchor>
-  <blockquote class="text-xs font-light text-center">Indisponíveis por enquanto.</blockquote>
+  <blockquote class="text-xs font-light text-center">
+    Disponíveis até <b class="font-black">04/10, 23:59</b>
+  </blockquote>
 
-  <SectionAnchor variant="sistemas" id="palestrantes" disabled>
+  <SectionAnchor
+    is="final-date-disable"
+    breakout="content"
+    variant="sistemas"
+    id="palestrantes"
+    href="https://forms.gle/pgm26R3fsjK2c5TK8"
+    target="_blank"
+    icon:hide={true}
+  >
     Para Palestrantes/Oficineiros
   </SectionAnchor>
-  <blockquote class="text-xs font-light text-center">Indisponíveis por enquanto.</blockquote>
+  <blockquote class="text-xs font-light text-center">
+    Disponíveis até <b class="font-black">04/10, 23:59</b>
+  </blockquote>
 </Article>
+
+<script>
+  const finalDateDefault = new Date("2026-10-04T23:59:00-03:00");
+
+  class FinalDateDisabled extends HTMLAnchorElement {
+    #interval: NodeJS.Timeout | undefined = undefined;
+
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const finalDate = new Date(this.getAttribute("data-final-date") ?? finalDateDefault) ?? finalDateDefault;
+      const callback = () => {
+        if (new Date() > finalDate) {
+          this.setAttribute("data-disabled", "");
+          this.setAttribute("href", `./ingressos#${this.getAttribute("data-id")}`);
+        }
+      };
+      callback();
+
+      this.#interval = setInterval(callback, 5000);
+    }
+
+    disconnectedCallback() {
+      clearInterval(this.#interval);
+    }
+  }
+
+  customElements.define("final-date-disable", FinalDateDisabled, { extends: "a" });
+</script>
