@@ -53,6 +53,10 @@
   --popout: min(--spacing(--value(integer)), 100% - var(--gutter) * 2);
 }
 
+@utility breakout-content {
+  grid-column: content;
+}
+
 @utility breakout-none {
   grid-column: unset;
 }
