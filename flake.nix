@@ -22,12 +22,7 @@
         { pkgs, ... }:
         {
           devshells.default = {
-            packages = with pkgs; [
-              deno
-              nodejs
-              imagemagick
-              libwebp
-            ];
+            packages = with pkgs; [ deno ];
             devshell.motd = "\\";
           };
         };
