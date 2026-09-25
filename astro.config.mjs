@@ -18,21 +18,32 @@ export default defineConfig({
       },
     },
   },
-  // image: {
-  //   service: passthroughImageService(),
-  // },
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [
     {
-      provider: fontProviders.fontsource(),
-      name: "Jaro",
-      cssVariable: "--astro-font-jaro",
+      provider: fontProviders.google(),
+      name: "Passion One",
+      cssVariable: "--astro-font-passion-one",
     },
     {
       provider: fontProviders.fontsource(),
       name: "Jura",
       cssVariable: "--astro-font-jura",
+    },
+    {
+      provider: fontProviders.local(),
+      name: "Chido",
+      cssVariable: "--astro-font-chido",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/chido.otf"],
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
     },
   ],
 });

@@ -42,7 +42,7 @@ const tv = createTV({
 
 export const sectionStyles = tv({
   slots: {
-    base: "has-[>_svg]:flex gap-2 text-center items-center p-4 text-dark-950 rounded-2xl uppercase font-jaro text-2xl md:text-3xl whitespace-nowrap",
+    base: "has-[>_svg]:flex gap-2 text-center items-end p-4 text-dark-950 rounded-2xl uppercase font-passion-one text-2xl md:text-3xl whitespace-nowrap",
     button: "cursor-pointer disabled:grayscale disabled:pointer-events-none disabled:select-none",
     anchor: "cursor-pointer data-disabled:grayscale data-disabled:pointer-events-none data-disabled:select-none",
   },

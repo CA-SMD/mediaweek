@@ -21,10 +21,10 @@ const Icon = icons[icon];
 
 <div
   class:list={cn(
-    "rounded-4xl bg-dark-950 size-28 md:size-40 text-bright-50 gap-2 md:gap-4 flex flex-col text-center p-5 font-jaro text-xs md:text-xl justify-center items-center",
+    "rounded-4xl bg-dark-950 size-28 md:size-40 text-bright-50 space-y-2 text-center p-5 font-passion-one text-xs md:text-xl",
     className,
   )}
 >
-  <Icon class="size-8 md:size-16" />
+  <Icon class="size-8 md:size-16 mx-auto" />
   <slot />
 </div>

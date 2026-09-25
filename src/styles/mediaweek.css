@@ -78,6 +78,18 @@
   --color-bright-950: oklch(0.12 0.009 72.2);
 }
 
+@theme {
+  --font-passion-one: var(--astro-font-passion-one);
+  --font-jura: var(--astro-font-jura);
+  --font-chido: var(--astro-font-chido);
+  --default-font-family: var(--font-jura);
+
+  --gradient-smd:
+    120deg, var(--color-jogos-500) 0%, var(--color-jogos-500) 25%, var(--color-audiovisual-500) 25%,
+    var(--color-audiovisual-500) 50%, var(--color-sistemas-500) 50%, var(--color-sistemas-500) 75%,
+    var(--color-design-500) 75%, var(--color-design-500) 100%;
+}
+
 @layer base {
   html,
   body {

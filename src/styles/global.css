@@ -2,17 +2,6 @@
 @import "grid-breakout.css";
 @import "mediaweek.css";
 
-@theme inline {
-  --font-jaro: var(--astro-font-jaro);
-  --font-jura: var(--astro-font-jura);
-  --default-font-family: var(--font-jura);
-
-  --gradient-smd:
-    120deg, var(--color-jogos-500) 0%, var(--color-jogos-500) 25%, var(--color-audiovisual-500) 25%,
-    var(--color-audiovisual-500) 50%, var(--color-sistemas-500) 50%, var(--color-sistemas-500) 75%,
-    var(--color-design-500) 75%, var(--color-design-500) 100%;
-}
-
 @layer base {
   html,
   body {
